@@ -1,0 +1,239 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian">
+                        <!--category-productsr-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=1">Máy vi tính</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=2">Bàn phím</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=3">Chuột</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=4">Tai nghe</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=5">Loa</a></h4>
+                            </div>
+                        </div>
+                    </div><!--/category-products-->
+
+
+
+                    <div class="shipping text-center">
+                        <!--shipping-->
+                        <img src="~/Content/images/panel/images.jpg" width="270" height="329" />
+                    </div><!--/shipping-->
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                @{
+
+                    var p = Model;
+                    var url = "/Content/images/shop/" + ViewBag.image + ".jpg";
+                    <div class="product-details">
+                        <!--product-details-->
+                        <div class="col-sm-5">
+                            <div class="view-product">
+                                <img src=@url alt="">
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="product-information">
+                                <!--/product-information-->
+                                <img src="images/product-details/new.jpg" class="newarrival" alt="">
+                                <h2>@ViewBag.productName</h2>
+                                <p>ID: 1089772</p>
+                                <img src="images/product-details/rating.png" alt="">
+                                <span>
+                                    <span>@ViewBag.price</span>
+                                    <label>Quantity:</label>
+                                    <input type="number" id="quantity" value="1">
+                                    <button type="button" class="btn btn-fefault cart" onclick="AddToCart();">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Add to cart
+                                    </button>
+                                </span>
+                                <p><b>Availability:</b> In Stock</p>
+                                <p><b>Condition:</b> New</p>
+                                <p><b>Brand:</b> E-SHOPPER</p>
+                                <a href=""><img src="images/product-details/share.png" class="share img-responsive" alt=""></a>
+                                @Html.Raw(ViewBag.detail)
+                            </div><!--/product-information-->
+                        </div>
+                    </div><!--/product-details-->
+
+                }
+
+
+
+
+                <div class="recommended_items">
+                    <!--recommended_items-->
+                    <h2 class="title text-center">recommended items</h2>
+
+                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item">
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="images/home/recommend1.jpg" alt="">
+                                                <h2>$56</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="images/home/recommend2.jpg" alt="">
+                                                <h2>$56</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="images/home/recommend3.jpg" alt="">
+                                                <h2>$56</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item active">
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="images/home/recommend1.jpg" alt="">
+                                                <h2>$56</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="images/home/recommend2.jpg" alt="">
+                                                <h2>$56</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="images/home/recommend3.jpg" alt="">
+                                                <h2>$56</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div><!--/recommended_items-->
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form class="modal-content" action="">
+        <div class="container">
+            <h4>Add @ViewBag.productName to Cart</h4>
+            <p>Are you sure you want to add to cart?</p>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-fefault cart">Cancel</button>
+                @Html.ActionLink("Add to cart", "AddToCart", "DetailProduct", new { @Id = ViewBag.idc }, new { @class = "btn btn-fefault cart" })
+                
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<script>
+    function AddToCart() {
+        
+        if ($('#quantity').val() <= 0 || $('#quantity').val() == "") {
+            alert('Invalid entered quantity');
+        }
+        else {
+            var quantity = $('#quantity').val();
+            $.ajax({
+                url: '/DetailProduct/checkAmount',
+                type: "POST",
+                data: { quantity: quantity , id : @ViewBag.idc },
+                success: function (result) {
+                    alert(result);
+                }
+            });
+        }
+    }
+</script>

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<WebApplication4.Models.Product>
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="advertisement">
+    <div class="container">
+        <img src="~/Content/images/panel/panel2.jpg" />
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian">
+                        <!--category-productsr-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=1">Máy vi tính</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=2">Bàn phím</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=3">Chuột</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=4">Tai nghe</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="/Shop/Category?CategoryID=5">Loa</a></h4>
+                            </div>
+                        </div>
+                    </div><!--/category-products-->
+
+                
+
+                    <div class="price-range">
+                        <!--price-range-->
+                        <h2>Price Range</h2>
+                        <div class="well">
+                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                            <b>$ 0</b> <b class="pull-right">$ 600</b>
+                        </div>
+                    </div><!--/price-range-->
+
+                    <div class="shipping text-center">
+                        <!--shipping-->
+                        <img src="~/Content/images/shop/asus-gaming-rog-strix-g512-i7.jpg" width="270" height="329" />
+                    </div><!--/shipping-->
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title text-center">Features Items</h2>
+                    @foreach (var p in Model)
+                    {
+                        var url = "/Content/images/shop/"+@p.productImage + ".jpg";
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src= @url />
+                                      
+                                        <h2>@p.Price</h2>
+                                        <p>@p.productName</p>
+                                        <a href="/DetailProduct/Detail?id=@p.ID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            <h2>@p.Price</h2>
+                                            <p>@p.productName</p>
+                                            <a href="/DetailProduct/Detail?id=@p.ID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                    <ul class="pagination">
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">&raquo;</a></li>
+                    </ul>
+                </div><!--features_items-->
+            </div>
+        </div>
+    </div>
+</section>
+
